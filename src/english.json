@@ -1,0 +1,100 @@
+{
+  "days": [
+    {
+      "id": 1,
+      "date": "April 22",
+      "scenes": [
+        {
+          "id": 1,
+          "text": "You wake up in your small home in a small town in the Philippines. You hear the sound of the electric fan and the air conditioner running in your bedroom. The television in the living room is also turned on, with the volume at a low level. You sit up in bed and look around the room. What would you like to do?",
+          "choices": [
+            {
+              "text": "Turn off the air conditioner, fan, and television.",
+              "id": 1,
+              "result": "You get out of bed and turn off the air conditioner, electric fan, and the television. You feel the humidity of the morning heat start to set in as you go about your morning routine.",
+              "calamityModifier": -1,
+              "nextScene": 2
+            },
+            {
+              "text": "Leave the appliances on and get ready for work.",
+              "id": 2,
+              "result": "You decide to leave the appliances on and get ready for work. You quickly freshen up and get dressed.",
+              "calamityModifier": 1,
+              "nextScene": 2
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "As you step outside your house, you see that there is garbage scattered around the area. You notice that some of it is floating in the nearby river, which is not a good sign. What would you like to do?",
+          "choices": [
+            {
+              "text": "Pick up the trash and dispose of it properly.",
+              "id": 1,
+              "result": "You take a moment to pick up the trash and dispose of it properly. You feel good about your small contribution to making the environment cleaner.",
+              "calamityModifier": -1,
+              "nextScene": null
+            },
+            {
+              "text": "Ignore the trash and head to work.",
+              "id": 2,
+              "result": "You decide to ignore the trash and head to work.",
+              "calamityModifier": 1,
+              "nextScene": null
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Now, you have to decide how to get to work. You own a car and a bicycle, but you can also take public transportation (a Jeepney). What would you like to do?",
+          "choices": [
+            {
+              "text": "Drive your car to work.",
+              "id": 1,
+              "result": "You decide to drive your car to work. As you make your way down the road, you notice the exhaust fumes coming out of the car's tailpipe. You wonder how much damage it does to the environment.",
+              "calamityModifier": 1,
+              "nextScene": 3
+            },
+            {
+              "text": "Ride your bicycle to work.",
+              "id": 2,
+              "result": "You decide to ride your bicycle to work, which is a great choice for the environment. As you ride your bike, you feel the fresh air and the morning breeze. You pass by some areas of the town that are crowded with vehicles and notice that there are few people cycling or walking. You're glad to be doing your part to help the environment.",
+              "calamityModifier": -1,
+              "nextScene": 3
+            },
+            {
+              "text": "Take a Jeepney to work.",
+              "id": 3,
+              "result": "You decide to take a Jeepney to work. You walk a few blocks to the nearest Jeepney stop and wait for one to arrive. When one finally arrives, you hop on board and pay your fare. The Jeepney is crowded, but you manage to find a seat. As you travel towards your office, you notice the pollution and congestion on the roads. You feel that your choice to take public transportation is a small but important step towards reducing your carbon footprint.",
+              "calamityModifier": 0,
+              "nextScene": 3
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "You arrive at the parking lot near your office building. A nearby convenience store catches your eye, and you realize you're thirsty. You have a choice to make:",
+          "choices": [
+            {
+              "text": "Buy bottled water from the convenience store.",
+              "id": 1,
+              "result": "You decide to buy bottled water from the convenience store. After paying for your drink, you notice that there is a nearby trash can where you can dispose of your bottle. You quickly throw it in the bin and make your way to the office.",
+              "calamityModifier": 1,
+              "nextScene": 5
+            },
+            {
+              "text": "Refill your reusable water bottle at the water dispenser in your office building.",
+              "id": 2,
+              "result": "You choose to refill your reusable water bottle at the water dispenser in your office building. You feel good about making an environmentally friendly choice.",
+              "calamityModifier": -1,
+              "nextScene": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2
+    }
+  ]
+}
