@@ -36,7 +36,6 @@ const Game = () => {
 
   return (
     <div>
-      {console.log(dayData.scenes)}
       {choices.length > 0 && (
         <p>
           Your previous choices:{" "}
@@ -51,9 +50,8 @@ const Game = () => {
       {choices.length > 0 && (
         <button onClick={handleClearStorage}>Clear Choices</button>
       )}
-      {resultText ? <p>{resultText}</p> : <></>}
-      {console.log(resultText)}
-      <Scene scenes={scenes} />
+      {resultText ? <p>{resultText}</p> : null}
+      <Scene scenes={scenes} day={day} setDay={setDay} />
     </div>
   );
 };

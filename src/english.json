@@ -3,18 +3,19 @@
     "date": "April 22",
     "scenes": {
       "1": {
-        "text": "You wake up in your small home in a small town in the Philippines. You hear the sound of the electric fan and the air conditioner running in your bedroom. The television in the living room is also turned on, with the volume at a low level. You sit up in bed and look around the room. What would you like to do?",
+        "text": [
+          "You wake up in your small home in a small town in the Philippines. You hear the sound of the electric fan and the air conditioner running in your bedroom. The television in the living room is also turned on, with the volume at a low level. You sit up in bed and look around the room.",
+          "What would you like to do?"
+        ],
         "choices": [
           {
             "text": "Turn off the air conditioner, fan, and television.",
-            "id": 1,
             "result": "You get out of bed and turn off the air conditioner, electric fan, and the television. You feel the humidity of the morning heat start to set in as you go about your morning routine.",
             "calamityModifier": -1,
             "nextScene": 2
           },
           {
             "text": "Leave the appliances on and get ready for work.",
-            "id": 2,
             "result": "You decide to leave the appliances on and get ready for work. You quickly freshen up and get dressed.",
             "calamityModifier": 1,
             "nextScene": 2
@@ -22,18 +23,19 @@
         ]
       },
       "2": {
-        "text": "As you step outside your house, you see that there is garbage scattered around the area. You notice that some of it is floating in the nearby river, which is not a good sign. What would you like to do?",
+        "text": [
+          "As you step outside your house, you see that there is garbage scattered around the area. You notice that some of it is floating in the nearby river, which is not a good sign.",
+          "What would you like to do?"
+        ],
         "choices": [
           {
             "text": "Pick up the trash and dispose of it properly.",
-            "id": 1,
             "result": "You take a moment to pick up the trash and dispose of it properly. You feel good about your small contribution to making the environment cleaner.",
             "calamityModifier": -1,
             "nextScene": 3
           },
           {
             "text": "Ignore the trash and head to work.",
-            "id": 2,
             "result": "You decide to ignore the trash and head to work.",
             "calamityModifier": 1,
             "nextScene": 3
@@ -41,25 +43,25 @@
         ]
       },
       "3": {
-        "text": "Now, you have to decide how to get to work. You own a car and a bicycle, but you can also take public transportation (a Jeepney). What would you like to do?",
+        "text": [
+          "Now, you have to decide how to get to work. You own a car and a bicycle, but you can also take a Jeepney.",
+          "What would you like to do?"
+        ],
         "choices": [
           {
             "text": "Drive your car to work.",
-            "id": 1,
             "result": "You decide to drive your car to work. As you make your way down the road, you notice the exhaust fumes coming out of the car's tailpipe. You wonder how much damage it does to the environment.",
             "calamityModifier": 1,
             "nextScene": 4
           },
           {
             "text": "Ride your bicycle to work.",
-            "id": 2,
             "result": "You decide to ride your bicycle to work, which is a great choice for the environment. As you ride your bike, you feel the fresh air and the morning breeze. You pass by some areas of the town that are crowded with vehicles and notice that there are few people cycling or walking. You're glad to be doing your part to help the environment.",
             "calamityModifier": -1,
             "nextScene": 4
           },
           {
             "text": "Take a Jeepney to work.",
-            "id": 3,
             "result": "You decide to take a Jeepney to work. You walk a few blocks to the nearest Jeepney stop and wait for one to arrive. When one finally arrives, you hop on board and pay your fare. The Jeepney is crowded, but you manage to find a seat. As you travel towards your office, you notice the pollution and congestion on the roads. You feel that your choice to take public transportation is a small but important step towards reducing your carbon footprint.",
             "calamityModifier": 0,
             "nextScene": 4
@@ -67,7 +69,10 @@
         ]
       },
       "4": {
-        "text": "You arrive at the parking lot near your office building. A nearby convenience store catches your eye, and you realize you're thirsty. You have a choice to make:",
+        "text": [
+          "You arrive at the parking lot near your office building. A nearby convenience store catches your eye, and you realize you're thirsty.",
+          "You have a choice to make:"
+        ],
         "choices": [
           {
             "text": "Buy bottled water from the convenience store.",
@@ -84,10 +89,103 @@
             "nextScene": 5
           }
         ]
+      },
+      "5": {
+        "text": [
+          "Congratulations, you have completed the first day of the game."
+        ]
       }
     }
   },
   "2": {
-    "date": "April 23"
+    "date": "April 23",
+    "scenes": {
+      "1": {
+        "text": [
+          "You find yourself sitting at your desk, staring at your computer screen. The clock ticks away, and you realize it's time for you to print out the report you need to bring to the meeting later. You can either print out a physical copy or just use a digital version.",
+          "What will you do?"
+        ],
+        "choices": [
+          {
+            "text": "Print out a physical copy",
+            "result": "You click the print button, and the printer whirs to life. After a few seconds, the document is ready. You pick up the paper and look at it, feeling satisfied. However, you can't help but think about the environmental impact of your decision.",
+            "calamityModifier": 1,
+            "nextScene": 2
+          },
+          {
+            "text": "Use a digital version",
+            "result": "You decide to use a digital version of the report to save paper. You open the file and read through it on your computer screen.",
+            "calamityModifier": -1,
+            "nextScene": 2
+          }
+        ]
+      },
+      "2": {
+        "text": [
+          "You decide to grab some takeout food for lunch. As you approach the restaurant, you notice that they offer disposable containers for takeout. You can either use those or bring your own reusable containers.",
+          "What will you do?"
+        ],
+        "choices": [
+          {
+            "text": "Use disposable containers",
+            "result": "You decide to use the disposable containers offered by the restaurant. You grab your food, pay for it, and make your way back to the office. As you sit down to eat, you notice that the container is quite flimsy and feels like it could easily break. You finish your food quickly and toss the container in the trash.",
+            "calamityModifier": 1,
+            "nextScene": 3
+          },
+          {
+            "text": "Bring your own reusable containers",
+            "result": "You take out your reusable containers from your bag and hand them over to the person at the counter. They look at you quizzically, but then nod and pack your food in the containers. You feel good about your decision and walk out of the restaurant with your eco-friendly lunch.",
+            "calamityModifier": -1,
+            "nextScene": 3
+          }
+        ]
+      },
+      "3": {
+        "text": [
+          "The day is winding down, and you've finished all your work for the day. You get up to leave, but then you remember that you left your computer on standby mode when you went to lunch. You can either turn off your computer and monitor or leave them on standby mode.",
+          "What will you do?"
+        ],
+        "choices": [
+          {
+            "text": "Turn off your computer and monitor",
+            "result": "You decide to turn off your computer and monitor. You press the power button and wait as the screen goes black. You take a deep breath and head out of the office, feeling good about your decision.",
+            "calamityModifier": -1,
+            "nextScene": 4
+          },
+          {
+            "text": "Leave them on standby mode",
+            "result": "You decide to leave your computer and monitor on standby mode, thinking that it will save you time when you come in tomorrow. You pack up your things and head out the door, not giving it another thought.",
+            "calamityModifier": 1,
+            "nextScene": 4
+          }
+        ]
+      },
+      "4": {
+        "text": [
+          "You decide to stop by the grocery store on the way home. As you walk through the aisles, you notice that some products have plastic packaging while others have paper or biodegradable packaging. You can either buy products with plastic packaging or buy products with paper or biodegradable packaging.",
+          "What will you do?"
+        ],
+        "choices": [
+          {
+            "text": "Buy products with plastic packaging",
+            "result": "You choose to buy products with plastic packaging. You fill up your basket with groceries and head to the checkout counter. The cashier scans each item and bags them in plastic bags for you.",
+            "calamityModifier": 1,
+            "nextScene": 5
+          },
+          {
+            "text": "Buy products with paper or biodegradable packaging",
+            "result": "You decide to buy products with paper or biodegradable packaging. You grab a reusable bag from your backpack and start filling it with fruits, vegetables, and other groceries that come in paper or biodegradable packaging. You notice that some items have the label \"organic\" on them, so you decide to buy those as well.",
+            "calamityModifier": -1,
+            "nextScene": 5
+          }
+        ]
+      },
+      "5": {
+        "text": [
+          "As you leave the grocery store, you notice that the wind has picked up and there are plastic bags flying around.",
+          "The day is now over, and it's time to go home. You reflect on your choices throughout the day and wonder if you could have done anything differently."
+        ]
+      }
+    }
   }
 }
