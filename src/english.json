@@ -74,14 +74,14 @@
             "id": 1,
             "result": "You decide to buy bottled water from the convenience store. After paying for your drink, you notice that there is a nearby trash can where you can dispose of your bottle. You quickly throw it in the bin and make your way to the office.",
             "calamityModifier": 1,
-            "nextScene": 6
+            "nextScene": 5
           },
           {
             "text": "Refill your reusable water bottle at the water dispenser in your office building.",
             "id": 2,
             "result": "You choose to refill your reusable water bottle at the water dispenser in your office building. You feel good about making an environmentally friendly choice.",
             "calamityModifier": -1,
-            "nextScene": 6
+            "nextScene": 5
           }
         ]
       }

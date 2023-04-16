@@ -6,7 +6,7 @@ const Game = () => {
   const [choices, setChoices] = useState([]);
   const [day, setDay] = useState(1);
   const [activeSceneId, setActiveSceneId] = useState(1);
-  const [result, setResult] = useState("");
+  const [resultText, setResultText] = useState("");
   const [calamity, setCalamity] = useState(5);
 
   //Choice Storage
@@ -32,7 +32,7 @@ const Game = () => {
   // Game Logic
   const dayData = gameData[day];
 
-  const currentScene = dayData.scenes[activeSceneId];
+  const scenes = dayData.scenes;
 
   return (
     <div>
@@ -51,7 +51,9 @@ const Game = () => {
       {choices.length > 0 && (
         <button onClick={handleClearStorage}>Clear Choices</button>
       )}
-      <Scene currentScene={currentScene} setActiveSceneId={setActiveSceneId} />
+      {resultText ? <p>{resultText}</p> : <></>}
+      {console.log(resultText)}
+      <Scene scenes={scenes} />
     </div>
   );
 };
