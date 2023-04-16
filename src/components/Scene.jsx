@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Scene = ({ scenes, day, setDay }) => {
+const Scene = ({ scenes, day, setDay, saveData, storeChoices }) => {
+  const [existingData, setExisitingData] = useState({});
   const [currentSceneId, setCurrentSceneId] = useState(1);
   const [resultText, setResultText] = useState("");
   const { text, choices } = scenes[currentSceneId];
 
-  const handleClick = (sceneId, resultText) => {
+  useEffect(() => {
+    const loadData = JSON.parse(localStorage.getItem("saveData"));
+    if (loadData) {
+      setCurrentSceneId(loadData.scene);
+      setResultText(loadData.result);
+    }
+  }, []);
+
+  const handleClick = (sceneId, result) => {
     //change scene
     setCurrentSceneId(sceneId);
     //set result
-    if (resultText) setResultText(resultText);
+    if (result) setResultText(result);
     //modify calamity
+    //store choices
+    storeChoices(day, sceneId, result);
   };
 
   const handleNextDay = () => {

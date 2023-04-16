@@ -4,9 +4,9 @@ import Scene from "./Scene";
 
 const Game = () => {
   const [choices, setChoices] = useState([]);
+  const [saveData, setSaveData] = useState({});
   const [day, setDay] = useState(1);
-  const [activeSceneId, setActiveSceneId] = useState(1);
-  const [resultText, setResultText] = useState("");
+  const [initialData, setInitialData] = useState({});
   const [calamity, setCalamity] = useState(5);
 
   //Choice Storage
@@ -14,6 +14,12 @@ const Game = () => {
     const storedChoices = localStorage.getItem("choices");
     if (storedChoices) {
       setChoices(JSON.parse(storedChoices));
+    }
+
+    const loadData = JSON.parse(localStorage.getItem("saveData"));
+    if (loadData) {
+      setSaveData(loadData);
+      setDay(loadData.day);
     }
   }, []);
 
@@ -27,6 +33,16 @@ const Game = () => {
   const handleClearStorage = () => {
     localStorage.removeItem("choices");
     setChoices([]);
+  };
+
+  const storeChoices = (currentDay, currentScene, currentResult) => {
+    const currentSave = {
+      day: currentDay,
+      scene: currentScene,
+      result: currentResult,
+    };
+
+    localStorage.setItem("saveData", JSON.stringify(currentSave));
   };
 
   // Game Logic
@@ -50,8 +66,13 @@ const Game = () => {
       {choices.length > 0 && (
         <button onClick={handleClearStorage}>Clear Choices</button>
       )}
-      {resultText ? <p>{resultText}</p> : null}
-      <Scene scenes={scenes} day={day} setDay={setDay} />
+      <Scene
+        scenes={scenes}
+        day={day}
+        setDay={setDay}
+        saveData={saveData}
+        storeChoices={storeChoices}
+      />
     </div>
   );
 };
