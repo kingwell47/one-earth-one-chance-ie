@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
+import gameData from "../english.json";
+import Scene from "./Scene";
 
-const Game = ({ currentDayData }) => {
+const Game = () => {
   const [choices, setChoices] = useState([]);
-  const [currentScenes, setCurrentScenes] = useState([]);
+  const [day, setDay] = useState(1);
+  const [activeSceneId, setActiveSceneId] = useState(1);
+  const [result, setResult] = useState("");
+  const [calamity, setCalamity] = useState(5);
 
+  //Choice Storage
   useEffect(() => {
     const storedChoices = localStorage.getItem("choices");
     if (storedChoices) {
       setChoices(JSON.parse(storedChoices));
-    }
-
-    if (currentDayData) {
-      setCurrentScenes(currentDayData.scenes);
     }
   }, []);
 
@@ -27,9 +29,14 @@ const Game = ({ currentDayData }) => {
     setChoices([]);
   };
 
+  // Game Logic
+  const dayData = gameData[day];
+
+  const currentScene = dayData.scenes[activeSceneId];
+
   return (
     <div>
-      {console.log(currentScenes)}
+      {console.log(dayData.scenes)}
       {choices.length > 0 && (
         <p>
           Your previous choices:{" "}
@@ -44,9 +51,7 @@ const Game = ({ currentDayData }) => {
       {choices.length > 0 && (
         <button onClick={handleClearStorage}>Clear Choices</button>
       )}
-      {currentScenes.map((scene, index) => (
-        <p key={index}>{scene.text}</p>
-      ))}
+      <Scene currentScene={currentScene} setActiveSceneId={setActiveSceneId} />
     </div>
   );
 };
