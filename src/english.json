@@ -76,14 +76,12 @@
         "choices": [
           {
             "text": "Buy bottled water from the convenience store.",
-            "id": 1,
             "result": "You decide to buy bottled water from the convenience store. After paying for your drink, you notice that there is a nearby trash can where you can dispose of your bottle. You quickly throw it in the bin and make your way to the office.",
             "calamityModifier": 1,
             "nextScene": 5
           },
           {
             "text": "Refill your reusable water bottle at the water dispenser in your office building.",
-            "id": 2,
             "result": "You choose to refill your reusable water bottle at the water dispenser in your office building. You feel good about making an environmentally friendly choice.",
             "calamityModifier": -1,
             "nextScene": 5
@@ -184,6 +182,109 @@
         "text": [
           "As you leave the grocery store, you notice that the wind has picked up and there are plastic bags flying around.",
           "The day is now over, and it's time to go home. You reflect on your choices throughout the day and wonder if you could have done anything differently."
+        ]
+      }
+    }
+  },
+  "3": {
+    "date": "April 24",
+    "scenes": {
+      "1": {
+        "text": [
+          "You wake up to the sound of birds chirping and the rays of sunlight peeking through your window. Today is a weekday, but you do not have to go to work today. You get out of bed and start preparing yourself for the day ahead. You check your phone notifications and find a utility bill. You must now decide whether to pay it online or in person.",
+          "What do you do?"
+        ],
+        "choices": [
+          {
+            "text": "Pay the bill online",
+            "result": "You decide to pay the bill online. You log into the utility company's website and complete the transaction. By paying online, you have saved the paper that would have been used to print the bill and envelope. This reduces the amount of waste generated, and you feel good about making an environmentally conscious choice.",
+            "calamityModifier": -1,
+            "nextScene": 2
+          },
+          {
+            "text": "Pay the bill in person at the payment center",
+            "result": "You decide to pay the bill in person at the payment center. After getting dressed, you make your way to the nearby payment center. You notice that the streets are relatively clean, with only a few scattered pieces of trash here and there. As you walk towards the center, you see a few stray dogs rummaging through a pile of garbage. When you arrive at your destination, you hand over the bill and cash to the clerk, and she gives you a receipt. You notice that the office is still using paper receipts instead of digital ones.",
+            "calamityModifier": 1,
+            "nextScene": 2
+          }
+        ]
+      },
+      "2": {
+        "text": [
+          "As you finish up with the utility bill, you realize it's time to head to the market to buy some produce for the week. You grab your reusable bags and head out the door. As you walk through the bustling market, you see vendors selling fresh fruits and vegetables. You notice that some of the produce is packaged in plastic while others are not.",
+          "What do you do?"
+        ],
+        "choices": [
+          {
+            "text": "Buy produce without packaging",
+            "result": "You decide to buy produce without packaging. You approach the vendors selling fresh fruits and vegetables and ask for produce without any packaging. The vendors are happy to oblige and hand over the produce in your reusable bags. By choosing to buy unpackaged produce, you have reduced the amount of plastic waste generated. This is a good choice for the environment.",
+            "calamityModifier": -1,
+            "nextScene": 3
+          },
+          {
+            "text": "Buy produce packaged in plastic",
+            "result": "You decide to buy produce packaged in plastic. You reason that it will help preserve the freshness of the produce and that the packaging can be recycled. However, as you walk away from the vendor, you realize that not all of the plastic packaging can be recycled and some will likely end up in a landfill or in the ocean.",
+            "calamityModifier": 1,
+            "nextScene": 3
+          }
+        ]
+      },
+      "3": {
+        "text": [
+          "You finish your shopping and head back home with your bags of fresh produce. As you walk through the town, you notice that the streets are littered with trash.",
+          "You can't help but feel a little disappointed at the sight."
+        ]
+      }
+    }
+  },
+  "4": {
+    "date": "April 25",
+    "scenes": {
+      "1": {
+        "text": [
+          "You wake up to the sound of your alarm ringing on your phone. You slowly open your eyes and reach for your phone to turn off the alarm. You sit up on your bed and stretch your arms before getting up.",
+          "You look outside your window and see the sun rising over the horizon. You get ready for work and head to the front door. As you open the door, you see a package delivery at your doorstep. You pick up the package and see that it is wrapped in plastic packaging.",
+          "What do you do?"
+        ],
+        "choices": [
+          {
+            "text": "Keep the packaging",
+            "result": "You decide to keep the packaging and bring it inside with you. You head out to work, but as you walk, you notice a lot of trash on the street. You feel a twinge of guilt about adding to the waste with the packaging you just kept, but you shrug it off and continue on your way.",
+            "calamityModifier": 1,
+            "nextScene": 2
+          },
+          {
+            "text": "Recycle the packaging",
+            "result": "You decide to recycle the packaging. You go to the recycling bin outside your house and put the plastic packaging in the bin. As you walk back to your doorstep, you see your neighbor watering her plants. You wave at her and head to work.",
+            "calamityModifier": 0,
+            "nextScene": 2
+          }
+        ]
+      },
+      "2": {
+        "text": [
+          "After a long day at work, you decide to take a walk in the park to clear your head. As you walk around, you notice litter on the ground.",
+          "What do you do?"
+        ],
+        "choices": [
+          {
+            "text": "Pick up the litter and dispose of it properly",
+            "result": "You decide to pick up the litter and look for a trash bin to dispose of it properly. You see a bin a few feet away and walk towards it. As you walk, you notice that the park is quite dirty and there are not many trash bins around. You feel sad that people are not taking care of the environment.",
+            "calamityModifier": -1,
+            "nextScene": 3
+          },
+          {
+            "text": "Ignore the litter",
+            "result": "You decide to ignore the litter on the ground and continue your walk in the park. As you walk, you start to feel guilty about your decision.",
+            "calamityModifier": 1,
+            "nextScene": 3
+          }
+        ]
+      },
+      "3": {
+        "text": [
+          "As you exit the park, you notice that the sky has become cloudy and it looks like it might rain soon. At home, you relax on your couch and turn on the TV. The news reports that a typhoon is approaching the Philippines, and your town is in its path. You start to feel anxious and realize that your choices throughout the week might have an impact on the outcome of the typhoon.",
+          "You hope for the best and try to get some rest for the next day."
         ]
       }
     }
