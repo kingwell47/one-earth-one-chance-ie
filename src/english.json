@@ -288,5 +288,27 @@
         ]
       }
     }
+  },
+  "5": {
+    "date": "April 26",
+    "endings": {
+      "1": {
+        "text": [
+          "As the typhoon hits the town, you brace yourself for the worst. But soon, your worst fears are realized as the water level begins to rise rapidly, turning the streets into rivers. You see people struggling to find safety, desperately trying to escape the rising water.",
+          "Homes and businesses are swallowed up by the water, and the sound of sirens and screams fills the air. You watch in horror as your own home is engulfed by the water, and your belongings are swept away. Your car, which you had foolishly left on the street, is severely damaged, and your bicycle is lost in the current.",
+          "With nowhere else to go, you climb onto the roof of your home and wait for rescue, with only your arms to shield you from the rain and wind. The water level continues to rise, and you can feel the force of the current pulling at you.",
+          "Hours pass, and you begin to lose hope of being rescued. You are cold, wet, and hungry. The realization sets in that your choices have had a devastating impact on your life and the lives of those around you. If only you had made better choices for the environment, this could have been avoided.",
+          "As the typhoon finally subsides, you are rescued by emergency workers. But the damage has been done. You have lost everything, including your home and belongings. Your future is uncertain, and you can only hope that others will learn from your mistakes."
+        ]
+      },
+      "2": {
+        "text": [
+          "You take a deep breath and prepare for the worst as the typhoon hits the town. The winds howl and the rain pounds against your windows, but you are relieved to see that the water level is not rising as fast as you had feared. You cautiously step outside and see that the water only reaches up to your knees in most places.",
+          "Although there is still some damage, the town and its inhabitants are able to weather the storm. People come together to help each other - neighbors lend a hand to those who need it, and businesses open their doors to provide shelter and supplies.",
+          "You see volunteers working tirelessly to clear the debris from the streets and help those who have lost their homes. The sense of community is strong, and you feel proud to have made choices that have contributed to this positive outcome.",
+          "As the storm passes, the town begins to recover. You see repairs being made and people starting to rebuild their lives. Your character is rewarded with a sense of satisfaction and hope for the future."
+        ]
+      }
+    }
   }
 }
