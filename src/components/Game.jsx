@@ -82,10 +82,14 @@ const Game = () => {
   };
 
   return (
-    <div>
-      <p>{dayData.date}</p>
+    <div id="game">
+      <p id="date">{dayData.date}</p>
       {day === 5 ? (
-        endingText.map((p, index) => <p key={index}>{p}</p>)
+        endingText.map((p, index) => (
+          <p key={index} className="ending">
+            {p}
+          </p>
+        ))
       ) : (
         <Scene
           scenes={scenes}

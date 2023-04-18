@@ -41,16 +41,19 @@ const Scene = ({
   };
 
   return (
-    <div>
-      {resultText ? <p>{resultText}</p> : null}
-      {text.map((i, index) => (
-        <p key={index}>{i}</p>
+    <>
+      {resultText ? <p id="resultText">{resultText}</p> : null}
+      {text.map((line, index) => (
+        <p key={index} className="sceneText">
+          {line}
+        </p>
       ))}
 
       {choices ? (
         choices.map((choice, index) => (
           <button
             key={index}
+            className="choiceButton"
             onClick={() =>
               handleClick(
                 choice.nextScene,
@@ -63,9 +66,11 @@ const Scene = ({
           </button>
         ))
       ) : (
-        <button onClick={() => handleNextDay()}>Proceed to next day</button>
+        <button onClick={() => handleNextDay()} id="nextDayButton">
+          Proceed to the next day
+        </button>
       )}
-    </div>
+    </>
   );
 };
 
