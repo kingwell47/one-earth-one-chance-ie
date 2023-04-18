@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const Scene = ({ scenes, day, setDay, saveData, storeChoices }) => {
-  const [existingData, setExisitingData] = useState({});
+import { motion } from "framer-motion";
+
+const Scene = ({ scenes, day, setDay, storeChoices }) => {
   const [currentSceneId, setCurrentSceneId] = useState(1);
   const [resultText, setResultText] = useState("");
   const { text, choices } = scenes[currentSceneId];
@@ -19,9 +20,9 @@ const Scene = ({ scenes, day, setDay, saveData, storeChoices }) => {
     setCurrentSceneId(sceneId);
     //set result
     if (result) setResultText(result);
-    //modify calamity
     //store choices
     storeChoices(day, sceneId, result);
+    //modify calamity
   };
 
   const handleNextDay = () => {
