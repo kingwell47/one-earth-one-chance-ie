@@ -6,7 +6,7 @@ import { motion, useForceUpdate } from "framer-motion";
 
 const Game = () => {
   const [day, setDay] = useState(1);
-  const [calamity, setCalamity] = useState(5);
+  const [calamity, setCalamity] = useState(12);
   const [endingText, setEndingText] = useState([]);
 
   //Choice Storage
@@ -15,6 +15,7 @@ const Game = () => {
     const loadEnding = JSON.parse(localStorage.getItem("endingData"));
     if (loadData) {
       setDay(loadData.day);
+      setCalamity(loadData.currentCalamity);
     }
     if (loadEnding) {
       setEndingText(loadEnding);
@@ -24,21 +25,29 @@ const Game = () => {
   useEffect(() => {
     if (day === 5) {
       const endings = gameData[5].endings;
-      const randomEndingIndex = getEnding(1);
-      setEndingText(endings[randomEndingIndex].text);
-      localStorage.setItem(
-        "endingData",
-        JSON.stringify(endings[randomEndingIndex].text)
-      );
+      if (endingText.length === 0) {
+        const randomEndingIndex = getEnding(calamity);
+        setEndingText(endings[randomEndingIndex].text);
+        localStorage.setItem(
+          "endingData",
+          JSON.stringify(endings[randomEndingIndex].text)
+        );
+      }
       storeChoices(5, 1, "");
     }
   }, [day]);
 
-  const storeChoices = (currentDay, currentScene, currentResult) => {
+  const storeChoices = (
+    currentDay,
+    currentScene,
+    currentResult,
+    newCalamity
+  ) => {
     const currentSave = {
       day: currentDay,
       scene: currentScene,
       result: currentResult,
+      currentCalamity: newCalamity,
     };
     localStorage.setItem("saveData", JSON.stringify(currentSave));
   };
@@ -51,11 +60,24 @@ const Game = () => {
   if (dayData.scenes) scenes = dayData.scenes;
 
   const getEnding = (calamityScore) => {
-    const testEnding = Math.random();
-    if (testEnding < 0.5) {
+    if (calamityScore >= 19) {
       return 1;
+    } else if (calamityScore >= 12) {
+      const random = Math.random();
+      if (random < 0.6) {
+        return 1;
+      } else {
+        return 2;
+      }
+    } else if (calamityScore >= 4) {
+      const random = Math.random();
+      if (random < 0.6) {
+        return 2;
+      } else {
+        return 3;
+      }
     } else {
-      return 2;
+      return 3;
     }
   };
 
@@ -70,6 +92,8 @@ const Game = () => {
           day={day}
           setDay={setDay}
           storeChoices={storeChoices}
+          calamity={calamity}
+          setCalamity={setCalamity}
         />
       )}
     </div>
