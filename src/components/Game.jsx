@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import gameData from "../english.json";
 import Scene from "./Scene";
 
-import { motion, useForceUpdate } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Game = () => {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(0);
   const [calamity, setCalamity] = useState(12);
   const [endingText, setEndingText] = useState([]);
 
@@ -52,11 +52,42 @@ const Game = () => {
     localStorage.setItem("saveData", JSON.stringify(currentSave));
   };
 
-  // Game Logic
+  //animation
+  const container = {
+    hidden: { opacity: 0 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.04 * i,
+      },
+    }),
+  };
+
+  const child = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
+  //get scenes
   const dayData = gameData[day];
-
   let scenes = [];
-
   if (dayData.scenes) scenes = dayData.scenes;
 
   const getEnding = (calamityScore) => {
@@ -82,25 +113,66 @@ const Game = () => {
   };
 
   return (
-    <div id="game">
-      <p id="date">{dayData.date}</p>
-      {day === 5 ? (
-        endingText.map((p, index) => (
-          <p key={index} className="ending">
-            {p}
-          </p>
-        ))
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      id="game"
+    >
+      {day === 0 ? (
+        <>
+          <motion.h1 variants={child} id="title">
+            One Earth, One Chance
+          </motion.h1>
+          {dayData.intro.map((line, index) => (
+            <motion.p variants={child} key={index} className="introText">
+              {line}
+            </motion.p>
+          ))}
+          <motion.p variants={child} className="introText">
+            Click the button below to start the game, and remember:
+          </motion.p>
+          <motion.p variants={child} className="introText caution">
+            YOU HAVE ONE CHANCE
+          </motion.p>
+          <motion.button
+            variants={child}
+            whileHover={{
+              scale: 1.2,
+              transition: { duration: 1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setDay(1)}
+            id="startButton"
+          >
+            Start Game
+          </motion.button>
+        </>
       ) : (
-        <Scene
-          scenes={scenes}
-          day={day}
-          setDay={setDay}
-          storeChoices={storeChoices}
-          calamity={calamity}
-          setCalamity={setCalamity}
-        />
+        <>
+          <motion.p variants={child} id="date">
+            {dayData.date}
+          </motion.p>
+          {day === 5 ? (
+            endingText.map((p, index) => (
+              <motion.p variants={child} key={index} className="ending">
+                {p}
+              </motion.p>
+            ))
+          ) : (
+            <Scene
+              scenes={scenes}
+              day={day}
+              setDay={setDay}
+              storeChoices={storeChoices}
+              calamity={calamity}
+              setCalamity={setCalamity}
+              child={child}
+            />
+          )}
+        </>
       )}
-    </div>
+    </motion.div>
   );
 };
 

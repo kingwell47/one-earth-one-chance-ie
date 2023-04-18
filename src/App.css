@@ -1,6 +1,7 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
+  font-family: "Amatic SC", cursive;
 }
 
 *,
@@ -23,10 +24,29 @@ body {
 }
 
 #game {
-  border: 1px solid red;
+}
+
+#title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--color-one);
+}
+
+.introText {
+  font-size: clamp(0.875rem, 5vw, 1rem);
+}
+
+.caution {
+  font-weight: 700;
+  color: var(--color-one);
+}
+
+#startButton {
+  font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
 #date {
+  font-size: clamp(1.5rem, 10vw, 2.5rem);
+  color: var(--color-one);
 }
 
 .ending {
@@ -36,6 +56,12 @@ body {
 }
 
 .sceneText {
+}
+
+#choiceButtons {
+  display: grid;
+  gap: 1rem;
+  border: none;
 }
 
 .choiceButton {
