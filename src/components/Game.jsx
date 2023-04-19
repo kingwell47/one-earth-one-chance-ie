@@ -6,16 +6,18 @@ import { motion } from "framer-motion";
 
 const Game = () => {
   const [day, setDay] = useState(0);
-  const [calamity, setCalamity] = useState(12);
+  const [calamity, setCalamity] = useState(gameData.defaultCalamity);
   const [endingText, setEndingText] = useState([]);
 
   //Choice Storage
   useEffect(() => {
-    const loadData = JSON.parse(localStorage.getItem("saveData"));
-    const loadEnding = JSON.parse(localStorage.getItem("endingData"));
-    if (loadData) {
-      setDay(loadData.day);
-      setCalamity(loadData.currentCalamity);
+    const { day: loadedDay, currentCalamity } =
+      JSON.parse(localStorage.getItem("saveData")) || {};
+    const loadEnding = JSON.parse(localStorage.getItem("endingData")) || [];
+
+    if (loadedDay) {
+      setDay(loadedDay);
+      setCalamity(currentCalamity);
     }
     if (loadEnding) {
       setEndingText(loadEnding);
@@ -23,17 +25,15 @@ const Game = () => {
   }, []);
 
   useEffect(() => {
-    if (day === 5) {
-      const endings = gameData[5].endings;
-      if (endingText.length === 0) {
-        const randomEndingIndex = getEnding(calamity);
-        setEndingText(endings[randomEndingIndex].text);
-        localStorage.setItem(
-          "endingData",
-          JSON.stringify(endings[randomEndingIndex].text)
-        );
-      }
-      storeChoices(5, 1, "");
+    if (day === 5 && endingText.length === 0) {
+      const { endings } = gameData[day];
+      const randomEndingIndex = getEnding(calamity);
+      setEndingText(endings[randomEndingIndex].text);
+      localStorage.setItem(
+        "endingData",
+        JSON.stringify(endings[randomEndingIndex].text)
+      );
+      storeChoices(5, 1, "", calamity);
     }
   }, [day]);
 
@@ -87,8 +87,7 @@ const Game = () => {
 
   //get scenes
   const dayData = gameData[day];
-  let scenes = [];
-  if (dayData.scenes) scenes = dayData.scenes;
+  const scenes = dayData.scenes || [];
 
   const getEnding = (calamityScore) => {
     if (calamityScore >= 19) {
@@ -154,9 +153,9 @@ const Game = () => {
             {dayData.date}
           </motion.p>
           {day === 5 ? (
-            endingText.map((p, index) => (
+            endingText.map((text, index) => (
               <motion.p variants={child} key={index} className="ending">
-                {p}
+                {text}
               </motion.p>
             ))
           ) : (

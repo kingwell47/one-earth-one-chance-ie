@@ -13,15 +13,28 @@ const Scene = ({
 }) => {
   const [currentSceneId, setCurrentSceneId] = useState(1);
   const [resultText, setResultText] = useState("");
+  const [content, setContent] = useState([]);
+
   const { text, choices } = scenes[currentSceneId];
 
   useEffect(() => {
-    const loadData = JSON.parse(localStorage.getItem("saveData"));
-    if (loadData) {
-      setCurrentSceneId(loadData.scene);
-      setResultText(loadData.result);
+    const { scene, result } =
+      JSON.parse(localStorage.getItem("saveData")) || {};
+    if (scene) {
+      setCurrentSceneId(scene);
+      setResultText(result);
     }
   }, []);
+
+  let currentContent = [...text];
+
+  if (resultText) {
+    currentContent = [resultText, ...currentContent];
+  }
+
+  useEffect(() => {
+    setContent(currentContent);
+  }, [resultText, currentSceneId]);
 
   const handleClick = (sceneId, result, calamityModifier) => {
     //change scene
@@ -43,12 +56,7 @@ const Scene = ({
 
   return (
     <>
-      {resultText && (
-        <motion.p variants={child} id="resultText">
-          {resultText}
-        </motion.p>
-      )}
-      {text.map((line, index) => (
+      {content.map((line, index) => (
         <motion.p variants={child} key={index} className="sceneText">
           {line}
         </motion.p>
