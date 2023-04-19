@@ -53,11 +53,27 @@ body {
 
 .caution {
   font-weight: 700;
-  color: var(--color-one);
+  animation-name: color-change;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: var(--color-one);
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: var(--color-one);
+  }
 }
 
 #startButton {
   font-size: clamp(2rem, 5vw, 2.5rem);
+  text-transform: uppercase;
 }
 
 #date {
