@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { motion } from "framer-motion";
+import AudioPlayer from "./AudioPlayer";
 
 const Scene = ({
   scenes,
@@ -56,6 +57,7 @@ const Scene = ({
 
   return (
     <>
+      <AudioPlayer />
       {content.map((line, index) => (
         <motion.p variants={child} key={index} className="sceneText">
           {line}

@@ -73,7 +73,11 @@ body {
 
 #startButton {
   font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
   text-transform: uppercase;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #d9dddc;
 }
 
 #date {
@@ -84,7 +88,13 @@ body {
 .ending {
 }
 
-#resultText {
+#audioButton {
+  background: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem;
+  border: none;
 }
 
 .sceneText {
