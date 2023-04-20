@@ -114,24 +114,23 @@ const Game = () => {
   return (
     <motion.div
       variants={container}
-      initial="hidden"
-      animate="visible"
-      id="game"
-    >
+      initial='hidden'
+      animate='visible'
+      id='game'>
       {day === 0 ? (
         <>
-          <motion.h1 variants={child} id="title">
+          <motion.h1 variants={child} id='title'>
             One Earth, One Chance
           </motion.h1>
           {dayData.intro.map((line, index) => (
-            <motion.p variants={child} key={index} className="introText">
+            <motion.p variants={child} key={index} className='introText'>
               {line}
             </motion.p>
           ))}
-          <motion.p variants={child} className="introText">
+          <motion.p variants={child} className='introText'>
             Click the button below to start the game, and remember:
           </motion.p>
-          <motion.p variants={child} className="introText caution">
+          <motion.p variants={child} className='introText caution'>
             YOU HAVE ONE CHANCE
           </motion.p>
           <motion.button
@@ -142,22 +141,30 @@ const Game = () => {
             }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setDay(1)}
-            id="startButton"
-          >
+            id='startButton'>
             Start Game
           </motion.button>
         </>
       ) : (
         <>
-          <motion.p variants={child} id="date">
+          <motion.p variants={child} id='date'>
             {dayData.date}
           </motion.p>
           {day === 5 ? (
-            endingText.map((text, index) => (
-              <motion.p variants={child} key={index} className="ending">
-                {text}
-              </motion.p>
-            ))
+            <>
+              {endingText.map((text, index) => (
+                <motion.p variants={child} key={index} className='ending'>
+                  {text}
+                </motion.p>
+              ))}
+              <motion.a
+                variants={child}
+                href='https://forms.office.com/r/qp6wtMY4yr'
+                target='_blank'
+                id='surveyLink'>
+                Answer our Survey!
+              </motion.a>
+            </>
           ) : (
             <Scene
               scenes={scenes}

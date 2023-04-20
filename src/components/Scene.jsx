@@ -59,11 +59,11 @@ const Scene = ({
     <>
       <AudioPlayer />
       {content.map((line, index) => (
-        <motion.p variants={child} key={index} className="sceneText">
+        <motion.p variants={child} key={index} className='sceneText'>
           {line}
         </motion.p>
       ))}
-      <motion.fieldset variants={child} id="choiceButtons">
+      <motion.fieldset variants={child} id='choiceButtons'>
         {choices ? (
           choices.map((choice, index) => (
             <motion.button
@@ -74,15 +74,14 @@ const Scene = ({
               }}
               whileTap={{ scale: 0.9 }}
               key={index}
-              className="choiceButton"
+              className='choiceButton'
               onClick={() =>
                 handleClick(
                   choice.nextScene,
                   choice.result,
                   choice.calamityModifier
                 )
-              }
-            >
+              }>
               {choice.text}
             </motion.button>
           ))
@@ -95,9 +94,8 @@ const Scene = ({
             }}
             whileTap={{ scale: 0.9 }}
             onClick={() => handleNextDay()}
-            id="nextDayButton"
-          >
-            Proceed to the next day
+            id='nextDayButton'>
+            {day === 4 ? "You had one chance..." : "Proceed to the next day"}
           </motion.button>
         )}
       </motion.fieldset>
