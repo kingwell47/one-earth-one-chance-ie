@@ -112,7 +112,6 @@ body {
   gap: 1rem;
   border: none;
   justify-items: center;
-  
 }
 
 .choiceButton {
@@ -123,5 +122,9 @@ body {
 }
 
 footer p {
+  font-size: 0.625rem;
+}
+
+footer a {
   font-size: 0.625rem;
 }

@@ -8,7 +8,12 @@ function App() {
       <Game />
       <footer>
         <p>One Earth, One Chance v1.0</p>
-        <p>2023, Joel P. Doctor</p>
+        <a
+          href="https://www.facebook.com/madnessandimagination"
+          target="_blank"
+        >
+          2023, Joel P. Doctor
+        </a>
       </footer>
     </div>
   );
