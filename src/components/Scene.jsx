@@ -55,6 +55,11 @@ const Scene = ({
     setResultText("");
   };
 
+  const hoverAnimate = {
+    scale: 1.1,
+    transition: { duration: 1 },
+  };
+
   return (
     <>
       <AudioPlayer />
@@ -68,10 +73,7 @@ const Scene = ({
           choices.map((choice, index) => (
             <motion.button
               variants={child}
-              whileHover={{
-                scale: 1.2,
-                transition: { duration: 1 },
-              }}
+              whileHover={hoverAnimate}
               whileTap={{ scale: 0.9 }}
               key={index}
               className="choiceButton"
@@ -89,10 +91,7 @@ const Scene = ({
         ) : (
           <motion.button
             variants={child}
-            whileHover={{
-              scale: 1.2,
-              transition: { duration: 1 },
-            }}
+            whileHover={hoverAnimate}
             whileTap={{ scale: 0.9 }}
             onClick={() => handleNextDay()}
             id="nextDayButton"
